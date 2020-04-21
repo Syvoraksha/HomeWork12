@@ -19,8 +19,10 @@ namespace HomeWork12
                     menu.InputDay();
                     int day = 0;
                     day = menu.ReadDay();
-                   
-                    Month month = new Month(menu.IfLeapYear());
+                    menu.InputYear();
+                    string year;
+                    year = menu.ReadYear();
+                    Month month = new Month(menu.IfLeapYear(year));
                     Console.WriteLine(month.ReturnDate(day));
                 }
                 catch (Exception ex)
@@ -29,6 +31,7 @@ namespace HomeWork12
                 }
             }
 
+   
         }
     }
 }

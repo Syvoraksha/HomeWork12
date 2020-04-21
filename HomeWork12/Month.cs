@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace HomeWork12
 {
-    class Month
+    public class Month
     {
         private bool leapYear = false;
         public Month(bool _leapYear)
         {
             leapYear = _leapYear;
         }
-
-
-    
 
         public string ReturnDate(int day)
         {
