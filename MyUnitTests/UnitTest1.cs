@@ -51,6 +51,25 @@ namespace MyUnitTests
             int actRes = new Month(false).ReturnNumberOfMonth(numMonth);
             Assert.AreEqual(expRes, actRes);
         }
+        
+        [TestCase(100, "10 April")]
+        [TestCase(365, "31 December")]
+        public void TestReturnDateLeapYear(int day, string expRes)
+        {
+            string actRes = new Month(false).ReturnDate(day);
+            Assert.AreEqual(expRes, actRes);
+        }
+
+        [TestCase(101, "10 April")]
+        [TestCase(366, "31 December")]
+        [TestCase(60, "29 February")]
+        public void TestReturnDateNotLeapYear(int day, string expRes)
+        {
+            string actRes = new Month(true).ReturnDate(day);
+            Assert.AreEqual(expRes, actRes);
+        }
+
+
 
 
     }
