@@ -54,6 +54,8 @@ namespace MyUnitTests
         
         [TestCase(100, "10 April")]
         [TestCase(365, "31 December")]
+        [TestCase(60, "1 March")]
+        [TestCase(59, "28 February")]
         public void TestReturnDateLeapYear(int day, string expRes)
         {
             string actRes = new Month(false).ReturnDate(day);
@@ -63,6 +65,7 @@ namespace MyUnitTests
         [TestCase(101, "10 April")]
         [TestCase(366, "31 December")]
         [TestCase(60, "29 February")]
+
         public void TestReturnDateNotLeapYear(int day, string expRes)
         {
             string actRes = new Month(true).ReturnDate(day);
